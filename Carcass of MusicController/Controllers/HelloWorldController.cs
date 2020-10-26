@@ -13,9 +13,18 @@ namespace Carcass_of_MusicController.Controllers
             return View();
         }
 
-        public string Welcome()
+        public IActionResult Welcome()
         {
-            return "ko";
+            TempData["buttonval"] = "12345678";
+            int i = 12377;
+            string z = i.ToString();
+            TempData["buttonval"] = z;
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Welcome2()
+        {
+            return RedirectToAction("Index");
         }
     }
 }

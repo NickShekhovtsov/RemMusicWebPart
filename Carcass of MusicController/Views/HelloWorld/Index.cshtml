@@ -41,8 +41,14 @@
 <button class="knopka" onclick="clicked123()">Button123</button>
 
 <form method="post" action="@Url.Action("Add", "HelloWorldController")">
-    <button type="button" onclick="clicked1()">123</button>
+    <button asp-action="Welcome" name="button" onclick="clicked1()">123</button>
     </form>
+<div>
+    @TempData["buttonval"]
+</div>
+
+<h2>Button with url</h2>
+<button type="button" onclick="location.href = '@Url.Action("Welcome2","HelloWorld")'">Button url</button>
 
 
     @*<input type="button"
